@@ -8,7 +8,7 @@ def filters(miles, location, title, price, date):
     price_filter = 5000 #dollar amount
     name_filter = ["", ""] #includes this in title
     date_filter = 5000 #posted less than x days ago
-
+    
 
     miles_num = int(miles.split()[0].replace(',', '')) #turns html string into number for for loop
 
