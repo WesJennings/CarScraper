@@ -3,10 +3,10 @@ import datetime
 def filters(miles, location, title, price, date):
     
     #max filters 
-    miles_filter = 150000 #miles
+    miles_filter = 80000 #miles
     location_filter = 300 #range from me in miles
-    price_filter = 5000 #dollar amount
-    name_filter = ["", ""] #includes this in title
+    price_filter = 30000 #dollar amount
+    name_filter = ["lexus", "acura", "toyota", "honda"] #includes this in title
     date_filter = 5000 #posted less than x days ago
     
 
@@ -44,14 +44,16 @@ def filters(miles, location, title, price, date):
 
     truefalse = bool(0)
     
+    
+    
     for index, n in enumerate(name_filter):
         if n.lower() in title.lower():
             truefalse = bool(1)
 
     conditions.append(truefalse)
-    conditions.append(miles_num < miles_filter)
-    conditions.append(location_num < location_filter)
-    conditions.append(price_num < price_filter)
-    conditions.append(date_num < date_filter)
+    conditions.append(miles_num <= miles_filter)
+    conditions.append(location_num <= location_filter)
+    conditions.append(price_num <= price_filter)
+    conditions.append(date_num <= date_filter)
 
     return all(conditions)

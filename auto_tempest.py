@@ -59,22 +59,23 @@ try:
 
                     for index, car in enumerate(cars):
                         bid_check = car.find('i', class_="icon-hammer icon")
+                        
                         title = car.find('span', class_='title-wrap listing-title')
-                        if title:
-                            title = title.text.strip()
                         price = car.find('div', class_='badge__label label--price')
-                        if price:
-                            price = price.text
                         miles = car.find('span', class_='mileage')
-                        if miles:
-                            miles = miles.text
-                        date = car.find('span', class_='date')
-                        if date:
-                            date = date.text
+                        date = car.find('span', class_='date')  
                         car_link = car.find('a', class_='listing-link source-link')['href']
                         location = car.find('span', class_= 'distance')
-                        if location:
-                            location = location.text 
+
+                        if title and price and miles and date and location:
+                            title = title.text.strip()
+                            price = price.text
+                            miles = miles.text
+                            date = date.text
+                            location = location.text
+                        else:
+                            continue
+
                         if bid_check or '$' not in price:
                             continue
 
