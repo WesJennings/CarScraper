@@ -3,10 +3,10 @@ import datetime
 def filters(miles, location, title, price, date):
     
     #max filters 
-    miles_filter = 80000 #miles
+    miles_filter = 50000 #miles
     location_filter = 300 #range from me in miles
-    price_filter = 30000 #dollar amount
-    name_filter = ["lexus", "acura", "toyota", "honda"] #includes this in title
+    price_filter = 40000 #dollar amount
+    name_filter = ["lexus", "acura", "toyota", "ford"] #includes this in title
     date_filter = 5000 #posted less than x days ago
     
 
